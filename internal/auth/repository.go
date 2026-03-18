@@ -3,6 +3,7 @@ package auth
 import (
 	"errors"
 	"gorm.io/gorm"
+	"strings"
 )
 
 func IsUserExist(db *gorm.DB, inputUsername string) (*User, error) {
@@ -13,6 +14,26 @@ func IsUserExist(db *gorm.DB, inputUsername string) (*User, error) {
 	if result.Error != nil {
 		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
 			return nil, nil // 用户不存在，这不是错误，只是空结果
+		}
+		return nil, result.Error
+	}
+
+	return &user, nil
+}
+
+func FindUserByAccount(db *gorm.DB, account string) (*User, error) {
+	var user User
+	var result *gorm.DB
+
+	if strings.Contains(account, "@") {
+		result = db.Where("email = ?", account).First(&user)
+	} else {
+		result = db.Where("username = ?", account).First(&user)
+	}
+
+	if result.Error != nil {
+		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+			return nil, nil //null result
 		}
 		return nil, result.Error
 	}
