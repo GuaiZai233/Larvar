@@ -23,6 +23,5 @@ vendor/
 
 # Database
 *.db
-authdemo.db
 
 TODO.md
