@@ -15,6 +15,7 @@ func main() {
 		log.Fatal("failed to migrate database: ", err)
 	}
 
+	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 	router.SetupRouter(r)
 	if err := r.Run(":8080"); err != nil {
