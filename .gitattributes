@@ -1,0 +1,17 @@
+# 默认将所有文本文件的换行符转换为 LF (提交时转换为 LF，检出时转换为本地默认)
+* text=auto
+
+# 强制某些类型的文件在检出时始终使用 LF（推荐对代码文件使用）
+*.go text eol=lf
+*.java text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
+# 强制某些特定的 Windows 脚本使用 CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf

@@ -1,0 +1,28 @@
+# Binaries
+app
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test
+*.out
+
+# Vendor
+vendor/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+
+# Database
+*.db
+authdemo.db
+
+TODO.md
