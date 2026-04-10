@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - app-data:/app/data
+    environment:
+      - GIN_MODE=release
+    restart: unless-stopped
+    container_name: larvar-app
+
+volumes:
+  app-data:
+

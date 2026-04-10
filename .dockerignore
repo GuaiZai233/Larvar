@@ -1,0 +1,47 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+app
+*.o
+*.a
+*.so
+
+# Test coverage
+*.out
+coverage.html
+
+# Modules
+vendor/
+
+# GitHub
+.github
+
+# Database
+*.db
+*.sqlite
+
+# Make
+Makefile
+
+# Docs
+README.md
+LICENSE
+
+# Others
+.env
+.env.local
+*.log
+
