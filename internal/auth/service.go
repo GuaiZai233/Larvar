@@ -6,7 +6,7 @@ import (
 	"regexp"
 )
 
-var usernameRegexp = regexp.MustCompile(`^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$`)
+var usernameRegexp = regexp.MustCompile(`^[A-Za-z][A-Za-z0-9_-]{2,19}$`)
 
 func LoginUser(username string, password string) (string, error) {
 	// get DB
